@@ -1,5 +1,5 @@
 # 规则名称:AdBlock
-# 规则统计:15393
+# 规则统计:15391
 
 DOMAIN,118.89.204.198
 DOMAIN,a.wkanx.com
@@ -234,9 +234,7 @@ DOMAIN,newvector.map.baidu.com
 DOMAIN,nex.163.com
 DOMAIN,nsclick.baidu.com
 DOMAIN,o.clarity.ms
-DOMAIN,o33249.ingest.sentry.io
 DOMAIN,offnavi.map.baidu.com
-DOMAIN,openaicom.imgix.net
 DOMAIN,optimus-ads.amap.com
 DOMAIN,optimus-ads.amap.com.w.alikunlun.com
 DOMAIN,pangolin.snssdk.com
