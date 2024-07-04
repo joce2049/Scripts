@@ -1,5 +1,5 @@
 # 规则名称:Advertising
-# 规则统计:120054
+# 规则统计:120055
 
 payload:
   - '+.0.101tubeporn.com'
@@ -42692,6 +42692,7 @@ payload:
   - '+.fxmkij.jny.com'
   - '+.fxmnba.com'
   - '+.fxmrelevbu.com'
+  - '+.fxnmjb.xyz'
   - '+.fxrbsadtui.com'
   - '+.fxreferral.americanexpress.com'
   - '+.fxroflypm.com'
