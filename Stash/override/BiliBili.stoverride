@@ -8,9 +8,9 @@ http:
 
     - ^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH - reject-dict
 
-    - ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject-dict
-
     - ^https:\/\/(api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download)\? - reject-dict
+
+    - ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject-dict
 
     - ^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? - reject-dict
 
@@ -21,14 +21,7 @@ http:
     - ^https:\/\/app\.bilibili\.com\/x\/resource\/ip - reject-dict
 
   script:
-    - match: ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)
-      name: 哔哩哔哩.A
-      type: response
-      require-body: true
-      binary-mode: true
-      timeout: 60
-
-    - match: ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll
+    - match: ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$
       name: 哔哩哔哩.A
       type: response
       require-body: true
@@ -36,6 +29,20 @@ http:
       timeout: 60
 
     - match: ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus
+      name: 哔哩哔哩.A
+      type: response
+      require-body: true
+      binary-mode: true
+      timeout: 60
+
+    - match: ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.show\.v1\.Popular\/Index$
+      name: 哔哩哔哩.A
+      type: response
+      require-body: true
+      binary-mode: true
+      timeout: 60
+
+    - match: ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$
       name: 哔哩哔哩.A
       type: response
       require-body: true
@@ -56,7 +63,7 @@ http:
       binary-mode: true
       timeout: 60
 
-    - match: ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll
+    - match: ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$
       name: 哔哩哔哩.A
       type: response
       require-body: true
@@ -75,19 +82,19 @@ http:
       require-body: true
       timeout: 60
 
+    - match: ^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\?
+      name: 哔哩哔哩.B
+      type: response
+      require-body: true
+      timeout: 60
+
     - match: ^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\?
       name: 哔哩哔哩.B
       type: response
       require-body: true
       timeout: 60
 
-    - match: ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?
-      name: 哔哩哔哩.B
-      type: response
-      require-body: true
-      timeout: 60
-
-    - match: ^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\?
+    - match: ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\?
       name: 哔哩哔哩.B
       type: response
       require-body: true
@@ -99,7 +106,7 @@ http:
       require-body: true
       timeout: 60
 
-    - match: ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\?
+    - match: ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?
       name: 哔哩哔哩.B
       type: response
       require-body: true
@@ -113,7 +120,7 @@ http:
 
 script-providers:
   哔哩哔哩.A:
-    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoA.js
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js
     interval: 86400
 
   哔哩哔哩.B:
